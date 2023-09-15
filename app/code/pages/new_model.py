@@ -38,6 +38,14 @@ def one_hot_transform(encoder, dataframe, feature):
 
 # App layout
 layout = dbc.Container([
+    html.Div([
+        html.H3("New Car Price Prediction Model"),
+
+        html.P("Our new car price prediction model was trained with the linear regression algorithm using gradient descent method \
+               which finds the regression line iteratively. Our new model is much more computationally efficient to train \
+               but gives less accurate results compared to the old model. \
+               This new model has MSE of 0.242 and R2 of 0.729.")
+    ], style={"margin-top":'30px', "margin-left":'30px', "margin-right":'30px', "margin-bottom":'20px', "display":'inline-block'}),
     dbc.Row([
         html.Div([
             html.H5("Max Power"),
@@ -47,7 +55,7 @@ layout = dbc.Container([
 
             html.H5("Year"),
             dbc.Label("Enter the manufacture year of the car"),
-            dcc.Dropdown(id="year", options=[*range(1983, 3000)], style={"margin-bottom": '20px'}),
+            dcc.Dropdown(id="year", options=[*range(1983, 2101)], style={"margin-bottom": '20px'}),
 
             html.H5("Fuel"),
             dbc.Label("Enter the fuel type of the car"),
@@ -64,7 +72,7 @@ layout = dbc.Container([
             ],
             style={"margin-top": "30px"})
         ],
-        style={"margin":'30px', "display":'inline-block', "width": '700px'})
+        style={"margin-left":'30px', "margin-right":'30px', "margin-bottom":'30px', "display":'inline-block', "width": '700px'})
     ])
 ], fluid=True)
 

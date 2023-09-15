@@ -2,7 +2,7 @@ version: '3.10.12'
 services:
   python:
     command: python3 main.py
-    image: car_price_predict:a2
+    image: parunng/car_price_prediction:a2
     platform: linux/x86_64
     build:
       context: .

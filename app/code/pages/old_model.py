@@ -38,6 +38,14 @@ def one_hot_transform(encoder, dataframe, feature):
 
 # App layout
 layout = dbc.Container([
+    html.Div([
+        html.H3("Old Car Price Prediction Model"),
+
+        html.P("Our new car price prediction model was trained with Sklearn's Random Forest Regressor. \
+               This method has advantages of handling non-linear relationships between feature and target variables, \
+               and eliminating weights of redundant features which might help increasing the model's performance, \
+               albeit this method is computationally expensive to train. This model has MSE of 0.047 and R2 of 0.934.")
+    ], style={"margin-top":'30px', "margin-left":'30px', "margin-right":'30px', "margin-bottom":'20px', "display":'inline-block'}),
     dbc.Row([
         html.Div([
             html.H5("Max Power"),
@@ -47,7 +55,7 @@ layout = dbc.Container([
 
             html.H5("Year"),
             dbc.Label("Enter the manufacture year of the car"),
-            dcc.Dropdown(id="year_old", options=[*range(1983, 3000)], style={"margin-bottom": '20px'}),
+            dcc.Dropdown(id="year_old", options=[*range(1983, 2101)], style={"margin-bottom": '20px'}),
 
             html.H5("Fuel"),
             dbc.Label("Enter the fuel type of the car"),
@@ -64,7 +72,7 @@ layout = dbc.Container([
             ],
             style={"margin-top": "30px"})
         ],
-        style={"margin":'30px', "display":'inline-block', "width": '700px'})
+        style={"margin-left":'30px', "margin-right":'30px', "margin-bottom":'30px', "display":'inline-block', "width": '700px'})
     ])
 ], fluid=True)
 
